@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2136d1aefc7e4d899fbc8d55d0a4ecc8" Name="Diagram1">
+        <EntityTypeShape EntityType="bookclubModel.merch" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bookclubModel.point" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bookclubModel.status" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bookclubModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bookclubModel.type_user" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bookclubModel.users" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="bookclubModel.FK_users_type_user" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="bookclubModel.sostav" Width="1.5" PointX="7.5" PointY="1" />
+        <AssociationConnector Association="bookclubModel.FK_sostav_merch" />
+        <EntityTypeShape EntityType="bookclubModel.orders" Width="1.5" PointX="5.25" PointY="0.75" />
+        <AssociationConnector Association="bookclubModel.FK_orders_point" />
+        <AssociationConnector Association="bookclubModel.FK_orders_status" />
+        <AssociationConnector Association="bookclubModel.FK_orders_users" />
+        <AssociationConnector Association="bookclubModel.FK_sostav_orders" />
+        <EntityTypeShape EntityType="bookclubModel.LoginHistory" Width="1.5" PointX="5.25" PointY="8.875" />
+        <AssociationConnector Association="bookclubModel.FK__LoginHist__id_us__05D8E0BE" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

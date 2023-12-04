@@ -1,0 +1,51 @@
+﻿<Page x:Class="BookClub.Pages.merchesList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BookClub.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="merchesList">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListView Name="MerchBD" MouseRightButtonDown="MerchBD_MouseRightButtonDown">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Photo" Width="200">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image Width="200" Height="200" HorizontalAlignment="Center">
+                                        <Image.Source>
+                                            <Binding Path="photo">
+                                                <Binding.TargetNullValue>
+                                                    <BitmapImage UriSource="/photo/kniga.png"/>
+                                                </Binding.TargetNullValue>
+                                            </Binding>
+                                        </Image.Source>
+                                    </Image>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding name}" />
+                        <GridViewColumn Header="Description" DisplayMemberBinding="{Binding dexcription}" />
+                        <GridViewColumn Header="Manufacturer" DisplayMemberBinding="{Binding manufacturer}" />
+                        <GridViewColumn Header="Price" DisplayMemberBinding="{Binding price}" />
+                        <GridViewColumn Header="Discount" DisplayMemberBinding="{Binding discount}" />
+                    </GridView>
+                </ListView.View>
+                <ListView.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Добавить к заказу" Click="AddToOrder_Click"/>
+                    </ContextMenu>
+                </ListView.ContextMenu>
+            </ListView>
+
+            <Button Content="Просмотр заказа" Click="ShowOrderButton_Click" Name="ShowOrderButton" Visibility="Collapsed" Width="150" HorizontalAlignment="Right" Margin="10"
+                    Grid.Row="1"/>
+        </Grid>
+</Page>
